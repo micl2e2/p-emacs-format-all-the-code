@@ -71,6 +71,7 @@
 ;; - Meson (muon fmt)
 ;; - Nginx (nginxfmt)
 ;; - Nix (nixpkgs-fmt, nixfmt, alejandra)
+;; - Nim (nimpretty)
 ;; - OCaml (ocp-indent, ocamlformat)
 ;; - Perl (perltidy)
 ;; - PHP (prettier plugin)
@@ -176,6 +177,7 @@
     ("Markdown" prettier)
     ("Meson" muon-fmt)
     ("Nix" nixpkgs-fmt)
+    ("Nim" nimpretty)
     ("Objective-C" clang-format)
     ("OCaml" ocp-indent)
     ("Perl" perltidy)
@@ -1128,6 +1130,13 @@ Consult the existing formatters for examples of BODY."
   (:languages "Nix")
   (:features)
   (:format (format-all--buffer-easy executable)))
+
+(define-format-all-formatter nimpretty
+  (:executable "nimpretty")
+  (:install)
+  (:languages "Nim")
+  (:features)
+  (:format (format-all--buffer-easy executable "--stdin")))
 
 (define-format-all-formatter ocamlformat
   (:executable "ocamlformat")
