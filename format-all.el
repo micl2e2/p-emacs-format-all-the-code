@@ -1138,6 +1138,13 @@ Consult the existing formatters for examples of BODY."
   (:features)
   (:format (format-all--buffer-easy executable "--stdin")))
 
+(define-format-all-formatter gnu-indent
+  (:executable "indent")
+  (:install)
+  (:languages "C")
+  (:features)
+  (:format (format-all--buffer-easy executable)))
+
 (define-format-all-formatter ocamlformat
   (:executable "ocamlformat")
   (:install "opam install ocamlformat")
